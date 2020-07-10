@@ -12,4 +12,28 @@ for i in ${!computation[@]}
 do
         array[((index++))]=${computation[$i]}
 done
-echo ${array[@]}
+n=${#array[@]};
+function sort() {
+for ((i = 0; i<n; i++))
+do
+
+    for((j = 0; j<n-i-1; j++))
+    do
+
+        if [ ${array[j]} -gt ${array[$((j+1))]} ]
+        then
+            temp=${array[j]}
+            array[$j]=${array[$((j+1))]}
+            array[$((j+1))]=$temp
+        fi
+    done
+done
+}
+function desc() {
+for(( i=n-1; i>=0; i-- ))
+do
+ echo ${array[i]}
+done
+}
+sort
+desc
