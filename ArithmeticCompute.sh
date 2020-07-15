@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 #UC1
 read -p "Enter a value for a: " a
 read -p "Enter a value for b: " b
